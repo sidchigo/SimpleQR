@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Simple QR</title>
+		<link rel="stylesheet" href="style.css" />
+        
+        <!-- Load library -->
+	    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+        <script src="main.js"></script>
+	</head>
+	<body class="page">
+		<form class="QRForm" onsubmit="generateQR(event)">
+            <input
+				id="companyName"
+				class="linkInput"
+				type="text"
+				placeholder="Company name"
+                value="Griffinix"
+			/>
+			<input
+				id="link"
+				class="linkInput"
+				type="text"
+				value="https://www.google.com"
+                onblur="generateQR(event)"
+			/>
+			<button class="generateBtn" type="submit">Generate QR</button>
+			<button class="generateBtn" type="button" onclick="downloadQR()">Download QR</button>
+			<div id="qrcode"></div>
+		</form>
+	</body>
+</html>
